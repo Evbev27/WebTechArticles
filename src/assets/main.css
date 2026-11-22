@@ -1,0 +1,36 @@
+:root{
+    --main: #FF9D7F;
+    --secondary: #564242;
+    --hover: #ffebe0;
+    --hover2: #403131;
+}
+body{margin:0;padding:0;background-color:var(--main)}
+img{border-radius:16px}
+/* navbar */
+nav{background-color: var(--secondary);grid-column: 1 / -1; position:sticky; top:0;}
+nav span{float: left; color:white; padding:4px 32px; font-size:32px; padding-top:22px;}
+nav ul{margin:0; padding:0; overflow:hidden;list-style:none}
+nav ul li{float:right; padding:24px 32px; font-size:32px;}
+nav a:any-link{color: var(--main); text-decoration:none;}
+nav a:hover{color: white}
+.container{grid-template-columns: repeat(12,1fr);background-color:white;display:grid;column-gap:16px;margin:0 128px}
+/* normal cards */
+.card{grid-column:span 4; text-align: center; border: 2px solid black; margin:16px; border-radius:16px}
+.card h2,.bigcard h2{text-decoration: underline; font-size:36px}
+.card p, .bigcard p{color: var(--secondary)}
+.card img, .bigcard img{width:90%; padding-top:16px}
+.bigcard{grid-column:span 6; text-align: center; border: 2px solid black; margin:16px; border-radius:16px}
+header{grid-column:span 12; text-align:center; font-size:48px; color: var(--secondary)}
+.card:hover, .bigcard:hover{background-color: var(--hover)}
+/* spanning articles */
+.spanningArticle, .spanningArticleAlt{background-color: var(--secondary); padding:32px; overflow:hidden; height:320px}
+.spanningArticle:hover, .spanningArticleAlt:hover{background-color: var(--hover2);}
+.spanningArticle img,.spanningArticleAlt img{height: 100%;}
+.spanningArticle img{float:left;}
+.spanningArticleAlt img{float:right;}
+.spanningArticle h2, .spanningArticleAlt h2{color: var(--main); text-decoration: underline; font-size:36px}
+.spanningArticle p, .spanningArticleAlt p{color:white; font-size:20px}
+.spanningArticle span,.spanningArticleAlt span{float:left; padding: 8px 32px}
+/* search stuff */
+#searchspan, #addspan{grid-column:span 6; padding: 32px; font-size:20px; border-radius:16px; border: 2px solid black; margin:16px; line-height: 1.5}
+nav img{max-height: 32px; border-radius: 0px}
