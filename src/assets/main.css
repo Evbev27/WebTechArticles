@@ -32,5 +32,6 @@ header{grid-column:span 12; text-align:center; font-size:48px; color: var(--seco
 .spanningArticle p, .spanningArticleAlt p{color:white; font-size:20px}
 .spanningArticle span,.spanningArticleAlt span{float:left; padding: 8px 32px}
 /* search stuff */
-#searchspan, #addspan{grid-column:span 6; padding: 32px; font-size:20px; border-radius:16px; border: 2px solid black; margin:16px; line-height: 1.5}
+#searchspan, #addspan{grid-column:span 6; padding: 16px 32px; font-size:20px; border-radius:16px; border: 2px solid black; margin:16px; line-height: 1.5}
 nav img{max-height: 32px; border-radius: 0px}
+button{color: var(--main);background-color: var(--secondary); border-color: var(--secondary); padding:4px 8px; float:bottom; margin-bottom: 4px}
