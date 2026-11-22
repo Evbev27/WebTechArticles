@@ -3,7 +3,7 @@ import { ref,computed } from 'vue'
 
 import { useWorkout } from '../stores/workoutStore.js'
 
-const {articles, saveArticle} = useWorkout()
+const {articles, saveArticle, removeArticle} = useWorkout()
 
 
 const searchQuery = ref('')
@@ -29,11 +29,7 @@ function submitArticle(){
   saveArticle(newName, newDesc,'/src/images/placeholder.png',artiType.value)
   resetForm()
 }
-function removeArticle(id){
-  articles.value = articles.value.filter(
-          article => article.id !== id
-  )
-}
+
 function resetForm(){
   artiName.value = ''
   artiDesc.value = ''

@@ -23,7 +23,8 @@ function saveArticle(name, description, image, type) {
 }
 
 function removeArticle(id) {
-    articles.value = articles.value.filter(item => item.id !== id)
+    articles.value = articles.value.filter(
+        item => item.id !== id)
 }
 
 function toggleArticle(id) {
