@@ -1,8 +1,9 @@
 <script setup>
 import { ref, computed } from 'vue'
-import { initialArticles } from '../data/articles.js'
 
-const articles = ref(initialArticles.map(item => ({ ...item })))
+import { useWorkout } from '../stores/workoutStore.js'
+
+const {articles} = useWorkout()
 
 const filteredArticles = computed(() => {
   return articles.value.filter(item => {

@@ -1,9 +1,10 @@
 <script setup>
 import { ref,computed } from 'vue'
-import { initialArticles } from '../data/articles.js'
 
-const articles = ref(initialArticles.map(item => ({ ...item })))
-let nextId = Math.max(0, ...articles.value.map(item => item.id)) + 1
+import { useWorkout } from '../stores/workoutStore.js'
+
+const {articles, saveArticle} = useWorkout()
+
 
 const searchQuery = ref('')
 const searchCategory = ref('')
@@ -22,17 +23,10 @@ const artiName = ref('')
 const artiDesc = ref('')
 const artiType = ref('Review')
 
-function addArticle(){
+function submitArticle(){
   const newName = artiName.value.trim()
   const newDesc = artiDesc.value.trim()
-  articles.value.push({
-    id:nextId,
-    name:newName,
-    description:newDesc,
-    image:'/src/images/placeholder.png',
-    type:artiType.value,
-    deleted:false})
-  nextId++
+  saveArticle(newName, newDesc,'/src/images/placeholder.png',artiType.value)
   resetForm()
 }
 function removeArticle(id){
@@ -45,6 +39,7 @@ function resetForm(){
   artiDesc.value = ''
   artiType.value = 'Review'
 }
+
 </script>
 
 <template>
@@ -67,7 +62,7 @@ function resetForm(){
         <option value="Review">Review</option>
         <option value="News">News</option>
       </select><br>
-      <button @click="addArticle">add article</button>
+      <button @click="submitArticle">add article</button>
     </span>
     <p v-if="articles.length === 0" class="empty-state">
       No Articles
