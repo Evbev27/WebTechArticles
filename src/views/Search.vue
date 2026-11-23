@@ -53,16 +53,16 @@ function resetForm(){
     <span id="searchspan">
       <h2>Search articles</h2>
       <label for="article-search">- Search by name -</label><br>
-      <input id="article-search" v-model="searchQuery" type="search"><br>
+      <input id="article-search" v-model="searchQuery" type="search" placeholder="enter a name"><br>
       <label for="category-search">- Search by type -</label><br>
-      <input id="category-search" v-model="searchCategory" type="search">
+      <input id="category-search" v-model="searchCategory" type="search" placeholder="reviews / news">
     </span>
     <span id="addspan">
       <h2>Add an article</h2>
       <label for="nameInput">Name: </label>
-      <input id="nameInput" v-model="artiName" type="text"><br>
+      <input id="nameInput" v-model="artiName" type="text" placeholder="enter a name"><br>
       <label for="nameInput">Description: </label>
-      <input id="nameInput" v-model="artiDesc" type="text"><br>
+      <input id="nameInput" v-model="artiDesc" type="text" placeholder="enter a description"><br>
       <label for="typeInput">Type: </label>
       <select id="typeInput" v-model="artiType">
         <option value="Review">Review</option>

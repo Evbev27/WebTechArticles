@@ -4,16 +4,17 @@
     --hover: #ffebe0;
     --hover2: #403131;
 }
-body{margin:0;padding:0;background-image:url("../images/bgimg.png");}
+body{margin:0;padding:0;background-image:url("../images/bgimg.png")}
 img{border-radius:16px}
 /* navbar */
 nav{background-color: var(--secondary);grid-column: 1 / -1; position:sticky; top:0;}
+nav:hover{background-color: var(--hover2)}
 nav span{float: left; color:white; padding:4px 32px; font-size:32px; padding-top:22px;}
 nav ul{margin:0; padding:0; overflow:hidden;list-style:none}
 nav ul li{float:right; padding:24px 32px; font-size:32px;}
 nav a:any-link{color: var(--main); text-decoration:none;}
 nav a:hover{color: white}
-.container{grid-template-columns: repeat(12,1fr);background-color:white;display:grid;column-gap:16px;margin:0 128px}
+.container{grid-template-columns: repeat(12,1fr);background-color:white;display:grid;column-gap:16px;margin:0 128px;box-shadow: 0 0 8px var(--hover2)}
 /* normal cards */
 .card{grid-column:span 4; text-align: center; border: 2px solid black; margin:16px; border-radius:16px}
 .card h2,.bigcard h2{text-decoration: underline; font-size:36px}
@@ -32,9 +33,9 @@ header{grid-column:span 12; text-align:center; font-size:48px; color: var(--seco
 .spanningArticle p, .spanningArticleAlt p{color:white; font-size:20px}
 .spanningArticle span,.spanningArticleAlt span{float:left; padding: 8px 32px}
 /* search stuff */
-#searchspan, #addspan{grid-column:span 6; padding: 16px 32px; font-size:20px; border-radius:16px; border: 2px solid black; margin:16px; line-height: 1.5}
+#searchspan, #addspan{grid-column:span 6; padding: 16px 32px; font-size:20px; border-radius:16px; border: 2px solid black; margin:16px; line-height: 1.5; background-image:url("../images/squigglyBG.png")}
 nav img{max-height: 32px; border-radius: 0px}
 button{color: var(--main);background-color: var(--secondary); border-color: var(--secondary); padding:4px 8px; float:bottom; margin-bottom: 4px}
-
+button:hover{background-color:var(--hover2); color:white}
 .empty-state, .notfound{grid-column:span 12; text-align: center}
 #errorTxt{color:red; font-size: 16px; margin: 0}
