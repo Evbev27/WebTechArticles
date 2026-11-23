@@ -37,3 +37,4 @@ nav img{max-height: 32px; border-radius: 0px}
 button{color: var(--main);background-color: var(--secondary); border-color: var(--secondary); padding:4px 8px; float:bottom; margin-bottom: 4px}
 
 .empty-state{grid-column:span 12; text-align: center}
+#errorTxt{color:red; font-size: 16px; margin: 0}

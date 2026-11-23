@@ -8,6 +8,7 @@ const {articles, saveArticle, removeArticle} = useWorkout()
 
 const searchQuery = ref('')
 const searchCategory = ref('')
+const errorMsg = ref('')
 
 const filteredArticles = computed(() => {
   const query = searchQuery.value.trim().toLowerCase()
@@ -26,6 +27,14 @@ const artiType = ref('Review')
 function submitArticle(){
   const newName = artiName.value.trim()
   const newDesc = artiDesc.value.trim()
+  if(newName === "" || null){
+    errorMsg.value = "name can't be left empty"
+    return
+  }
+  if(newDesc === "" || null){
+    errorMsg.value = "description can't be left empty"
+    return
+  }
   saveArticle(newName, newDesc,'/src/images/placeholder.png',artiType.value)
   resetForm()
 }
@@ -34,6 +43,7 @@ function resetForm(){
   artiName.value = ''
   artiDesc.value = ''
   artiType.value = 'Review'
+  errorMsg.value = ''
 }
 
 </script>
@@ -59,6 +69,7 @@ function resetForm(){
         <option value="News">News</option>
       </select><br>
       <button @click="submitArticle">add article</button>
+      <p id="errorTxt">{{errorMsg}}</p>
     </span>
     <p v-if="articles.length === 0" class="empty-state">
       No Articles

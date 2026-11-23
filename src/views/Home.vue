@@ -1,5 +1,9 @@
 <script setup>
-import { RouterLink } from 'vue-router'
+  import { ref,computed } from 'vue'
+
+  import { useWorkout } from '../stores/workoutStore.js'
+
+  const {articles} = useWorkout()
 </script>
 
 <template>
