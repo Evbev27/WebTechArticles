@@ -23,6 +23,9 @@ const filteredArticles = computed(() => {
 const artiName = ref('')
 const artiDesc = ref('')
 const artiType = ref('Review')
+const artiImg = ref('/src/images/placeholder.png')
+
+const editingId = ref(null)
 
 function submitArticle(){
   const newName = artiName.value.trim()
@@ -35,15 +38,29 @@ function submitArticle(){
     errorMsg.value = "description can't be left empty"
     return
   }
-  saveArticle(newName, newDesc,'/src/images/placeholder.png',artiType.value)
+  saveArticle(editingId.value, newName, newDesc,artiImg.value,artiType.value)
   resetForm()
+}
+
+function startEditing(id){
+  const article = articles.value.find(item => item.id === id)
+  if (!article) return
+  editingId.value = id
+  artiName.value = article.name
+  artiDesc.value = article.description
+  artiType.value = article.type
+  artiImg.value = article.image
+  errorMsg.value = ''
+
 }
 
 function resetForm(){
   artiName.value = ''
   artiDesc.value = ''
   artiType.value = 'Review'
+  artiImg.value = '/src/images/placeholder.png'
   errorMsg.value = ''
+  editingId.value = null
 }
 
 </script>
@@ -78,7 +95,9 @@ function resetForm(){
         <img :src="article.image">
         <h2>{{ article.name }}</h2>
         <p>{{ article.description}}</p>
-        <p>id: {{article.id}} type: {{article.type}}</p><button @click="removeArticle(article.id)">Remove</button>
+        <p>id: {{article.id}} type: {{article.type}}</p>
+        <button @click="removeArticle(article.id)">Remove</button>
+        <button @click="startEditing(article.id)">Edit</button>
       </div>
 
   </div>

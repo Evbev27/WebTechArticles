@@ -17,8 +17,16 @@ const progressPercent = computed(() => {
     return Math.round(completedCount.value / articles.value.length * 100)
 })
 
-function saveArticle(name, description, image, type) {
+function saveArticle(id, name, description, image, type) {
+    if(id === null){
     articles.value.push({ id: nextId++, name, description, image, type, deleted: false })
+    } else {
+        const article = articles.value.find(item => item.id === id)
+        article.name = name
+        article.description = description
+        article.image = image
+        article.type = type
+    }
     return ''
 }
 
@@ -32,9 +40,6 @@ function toggleArticle(id) {
     if (article) article.completed = !article.completed
 }
 
-function clearCompleted() {
-    articles.value = articles.value.filter(item => !item.completed)
-}
 
 // This single object is shared by every caller in this browser app.
 const workout = {
@@ -44,8 +49,7 @@ const workout = {
     progressPercent,
     saveArticle,
     removeArticle,
-    toggleArticle,
-    clearCompleted
+    toggleArticle
 }
 
 export function useWorkout() {

@@ -5,11 +5,12 @@ import SiteNav from './components/SiteNav.vue'
 
 const route = useRoute()
 
-// After client-side navigation, move keyboard focus to the new page heading.
 watch(() => route.fullPath, async () => {
   await nextTick()
   document.querySelector('#main-content h1')?.focus()
 })
+
+// github: https://github.com/Evbev27/WebTechArticles
 </script>
 
 <template>
