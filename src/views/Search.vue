@@ -75,7 +75,7 @@ function resetForm(){
       <input id="category-search" v-model="searchCategory" type="search" placeholder="reviews / news">
     </span>
     <span id="addspan">
-      <h2>Add an article</h2>
+      <h2>{{ editingId === null ? 'Add an article' : 'Edit an article'}}</h2>
       <label for="nameInput">Name: </label>
       <input id="nameInput" v-model="artiName" type="text" placeholder="enter a name"><br>
       <label for="nameInput">Description: </label>
@@ -85,7 +85,7 @@ function resetForm(){
         <option value="Review">Review</option>
         <option value="News">News</option>
       </select><br>
-      <button @click="submitArticle">add article</button>
+      <button @click="submitArticle">{{ editingId === null ? 'add article' : 'save changes'}}</button>
       <p id="errorTxt">{{errorMsg}}</p>
     </span>
     <p v-if="articles.length === 0" class="empty-state">
@@ -96,8 +96,8 @@ function resetForm(){
         <h2>{{ article.name }}</h2>
         <p>{{ article.description}}</p>
         <p>id: {{article.id}} type: {{article.type}}</p>
-        <button @click="removeArticle(article.id)">Remove</button>
-        <button @click="startEditing(article.id)">Edit</button>
+        <button @click="removeArticle(article.id)" :disabled="editingId !== null">Remove</button>
+        <button @click="startEditing(article.id)" :disabled="editingId !== null">Edit</button>
       </div>
 
   </div>

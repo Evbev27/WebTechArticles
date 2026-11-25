@@ -36,4 +36,5 @@
     <img src="../images/nvidia.png"><span><h2>Nvidia CEO resigns</h2>
     <p>CEO Jensen Huang steps down after cheating scandal comes to light...</p></span>
   </div>
+  <h2 v-if="articles.some(article => article.id === 3)">test</h2>
 </template>
