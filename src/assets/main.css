@@ -40,3 +40,14 @@ button:hover{background-color:var(--hover2); color:white}
 .empty-state, .notfound{grid-column:span 12; text-align: center}
 #errorTxt{color:red; font-size: 16px; margin: 0}
 button:disabled{opacity:50%}
+/* responsive design*/
+@media (max-width: 600px){
+    nav span{padding:4px; font-size:12px}
+    .container{margin:0}
+    .card, .bigcard{grid-column:span 12}
+    .spanningArticle, .spanningArticleAlt{padding:8px}
+    .spanningArticle p, .spanningArticleAlt p{font-size:16px}
+    .spanningArticle img,.spanningArticleAlt img, .card p, .bigcard p{max-width:90%; align-self:center}
+    .spanningArticle h2, .spanningArticleAlt h2, .card h2, .bigcard h2{font-size:24px}
+    #searchspan, #addspan{grid-column:span 12;}
+}
