@@ -16,19 +16,15 @@ function saveArticle(id, name, description, image, type) {
     }
     return ''
 }
-
 function removeArticle(id) {
     articles.value = articles.value.filter(
         item => item.id !== id)
 }
-
-// This single object is shared by every caller in this browser app.
-const workout = {
+const artiList = {
     articles: readonly(articles),
     saveArticle,
     removeArticle,
 }
-
-export function useWorkout() {
-    return workout
+export function useArtiList() {
+    return artiList
 }

@@ -1,10 +1,9 @@
 <script setup>
 import { ref,computed } from 'vue'
 
-import { useWorkout } from '../stores/workoutStore.js'
+import { useArtiList } from '../stores/articleStore.js'
 
-const {articles, saveArticle, removeArticle} = useWorkout()
-
+const {articles, saveArticle, removeArticle} = useArtiList()
 
 const searchQuery = ref('')
 const searchCategory = ref('')
