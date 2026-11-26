@@ -19,7 +19,7 @@ I used a simple card-based layout (with a 12-column grid), the number of article
 |Read an article|yes* as a card|
 |Article search|yes|
 |Form Validation|yes|
-|Responsive Design|X|
+|Responsive Design|yes|
 |'Not found' page|yes|
 |Navbar|yes|
 

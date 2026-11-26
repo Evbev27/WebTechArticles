@@ -94,7 +94,7 @@ function resetForm(){
         <img :src="article.image">
         <h2>{{ article.name }}</h2>
         <p>{{ article.description}}</p>
-        <p>id: {{article.id}} type: {{article.type}}</p>
+        <p class="IDtext">id: {{article.id}} type: {{article.type}}</p>
         <button @click="removeArticle(article.id)" :disabled="editingId !== null">Remove</button>
         <button @click="startEditing(article.id)" :disabled="editingId !== null">Edit</button>
       </div>
