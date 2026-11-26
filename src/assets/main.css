@@ -24,9 +24,9 @@ nav a:hover{color: white}
 header{grid-column:span 12; text-align:center; font-size:48px; color: var(--secondary)}
 .card:hover, .bigcard:hover{background-color: var(--hover); box-shadow: 0px 0px 8px var(--main)}
 /* spanning articles */
-.spanningArticle, .spanningArticleAlt{background-color: var(--secondary); padding:32px; overflow:hidden; height:320px}
+.spanningArticle, .spanningArticleAlt{background-color: var(--secondary); padding:32px; overflow:hidden;}
 .spanningArticle:hover, .spanningArticleAlt:hover{background-color: var(--hover2);}
-.spanningArticle img,.spanningArticleAlt img{height: 100%;}
+.spanningArticle img,.spanningArticleAlt img{height:320px}
 .spanningArticle img{float:left;}
 .spanningArticleAlt img{float:right;}
 .spanningArticle h2, .spanningArticleAlt h2{color: var(--main); text-decoration: underline; font-size:36px}

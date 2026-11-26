@@ -99,6 +99,5 @@ function resetForm(){
         <button @click="removeArticle(article.id)" :disabled="editingId !== null">Remove</button>
         <button @click="startEditing(article.id)" :disabled="editingId !== null">Edit</button>
       </div>
-
   </div>
 </template>
